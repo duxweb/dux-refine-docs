@@ -1,8 +1,8 @@
 import { defineConfig } from "islandjs";
 
 export default defineConfig({
+  enableSpa: true,
   title: 'Dux Refine',
-  lang: 'en-US',
   themeConfig: {
     locales: {
       '/en/': {

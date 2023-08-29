@@ -20,10 +20,10 @@
         var langs = window.navigator.languages || [window.navigator.language]
         if (langs.some(function (lang) { return lang.includes('zh') }))
         {
-          window.location.href = withBase('/zh');
+          window.location.href = withBase('/zh/');
         } else
         {
-          window.location.href = withBase('/en');
+          window.location.href = withBase('/en/');
         }
       } else
       {
