@@ -1,6 +1,5 @@
 ---
-pageType: home
-title: Dux Refine Development Guide
+layout: home
 
 hero:
   name: Dux Refine

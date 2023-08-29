@@ -1,6 +1,5 @@
 ---
-pageType: home
-title: Dux Refine 开发文档
+layout: home
 
 hero:
   name: Dux Refine
