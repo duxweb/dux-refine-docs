@@ -11,7 +11,19 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "islandjs": "^0.7.6"
+  "devDependencies": {
+    "islandjs": "^0.7.31",
+    "@types/react": "^18.2.21",
+    "@types/react-dom": "^18.2.7",
+    "@typescript-eslint/eslint-plugin": "^6.5.0",
+    "@typescript-eslint/parser": "^6.5.0",
+    "eslint": "^8.48.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-mdx": "^2.2.0",
+    "eslint-plugin-prettier": "^5.0.0",
+    "eslint-plugin-react": "^7.32.2",
+    "path": "^0.12.7",
+    "prettier": "^3.0.2",
+    "typescript": "^5.2.2"
   }
 }
