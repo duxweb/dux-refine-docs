@@ -72,7 +72,8 @@ function getSidebar(lang: 'zh' | 'en') {
       text: getText('基础', 'Base'),
       items: [
         { text: getText('项目配置', 'Config'), link: getLink('/base/config') },
-        { text: getText('Api 数据', 'Api Data'), link: getLink('/base/data') },
+        { text: getText('数据结构', 'Api Data'), link: getLink('/base/data') },
+        { text: getText('数据资源', 'Api  Resources'), link: getLink('/base/resources') },
       ]
     },
     {
