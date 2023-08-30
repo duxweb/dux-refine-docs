@@ -73,18 +73,19 @@ function getSidebar(lang: 'zh' | 'en') {
       items: [
         { text: getText('项目配置', 'Config'), link: getLink('/base/config') },
         { text: getText('数据结构', 'Api Data'), link: getLink('/base/data') },
-        { text: getText('数据资源', 'Api  Resources'), link: getLink('/base/resources') },
+        { text: getText('数据请求', 'Api  Request'), link: getLink('/base/resources') },
       ]
     },
     {
       text: getText('模块', 'Module'),
       items: [
         { text: getText('模块架构', 'Info'), link: getLink('/module/info') },
-        { text: getText('模块入口', 'Entrance'), link: getLink('/module/entrance') },
-        { text: getText('管理端配置', 'App'), link: getLink('/module/app') },
-        { text: getText('路由配置', 'Route'), link: getLink('/module/route') },
-        { text: getText('资源配置', 'Resource'), link: getLink('/module/resource') },
-        { text: getText('多语言配置', 'i18n'), link: getLink('/module/i18n') },
+        { text: getText('配置', 'Entrance'), link: getLink('/module/entrance') },
+        { text: getText('管理端', 'App'), link: getLink('/module/app') },
+        { text: getText('路由', 'Route'), link: getLink('/module/route') },
+        { text: getText('资源', 'Resource'), link: getLink('/module/resource') },
+        { text: getText('菜单', 'menu'), link: getLink('/module/menu') },
+        { text: getText('多语言', 'i18n'), link: getLink('/module/i18n') },
       ]
     },
     {
@@ -92,7 +93,15 @@ function getSidebar(lang: 'zh' | 'en') {
       items: [
         { text: getText('表格', 'Table'), link: getLink('/components/table') },
         { text: getText('表单', 'Form'), link: getLink('/components/form') },
-        { text: getText('上传', 'Upload'), link: getLink('/components/upload') },
+      ]
+    },
+    {
+      text: getText('Hook', 'Hook'),
+      items: [
+        { text: getText('表格', 'Table'), link: getLink('/hook/table') },
+        { text: getText('表单', 'Form'), link: getLink('/hook/form') },
+        { text: getText('选择', 'Select'), link: getLink('/hook/select') },
+        { text: getText('上传', 'Upload'), link: getLink('/hook/upload') },
       ]
     },
     {
