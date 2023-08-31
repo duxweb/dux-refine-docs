@@ -1,6 +1,6 @@
 # 数据请求
 
-数据请求使用 refine 的数据资源方法做处理，配置好后一个数据资源即可使用相关的请求方法，具体配置请查看模块 - 资源配置文档。
+数据请求使用 Refine 的数据资源方法进行处理。在配置好后，一个数据资源即可使用相关的请求方法。详细的配置请参阅 "模块 - 资源配置" 文档。
 
 ```js
 app.addResources([
@@ -11,13 +11,12 @@ app.addResources([
 ```
 
 :::tip
-Dux Refine 已预设一套 Rest Api 规则的 [Data Provider](https://refine.dev/docs/api-reference/core/providers/data-provider/)，请求时会自动拼接资源名与具体操作。
+Dux Refine 已经预设了一套符合 REST API 规范的 [数据提供者](https://refine.dev/docs/api-reference/core/providers/data-provider/)，在请求时会自动构建资源名称与具体操作。
 :::
-
 
 ## 列表数据
 
-使用以下 hook 可请求列表数据，如需分页则分页的 Url 参数为 Page。
+使用以下钩子函数可以请求列表数据。如果需要分页，分页的 URL 参数为 `Page`。
 
 ```js
 import { useList } from "@refinedev/core"
@@ -33,10 +32,9 @@ const { data, isLoading, isError } = useList({
 GET {apiUrl}/{resource}
 ```
 
-
 ## 单条数据
 
-使用以下 hook 可请求列表数据，如需分页则分页的 Url 参数为 Page。
+使用以下钩子函数可以请求单条数据。
 
 ```js
 import { useOne } from "@refinedev/core"
@@ -55,11 +53,10 @@ GET {apiUrl}/{resource}/{id}
 
 ## 创建数据
 
-使用以下 hook 可创建一条数据。
+使用以下钩子函数可以创建一条数据。
 
 ```js
 import { useCreate } from "@refinedev/core"
-
 
 const { mutate } = useCreate();
 
@@ -79,10 +76,10 @@ POST {apiUrl}/{resource}
 
 ## 更新数据
 
+使用以下钩子函数可以更新一条数据。
 
 ```js
 import { useUpdate } from "@refinedev/core"
-
 
 const { mutate } = useUpdate();
 
@@ -101,13 +98,12 @@ mutate({
 POST {apiUrl}/{resource}/{id}
 ```
 
-
 ## 删除数据
 
+使用以下钩子函数可以删除一条数据。
 
 ```js
 import { useDelete } from "@refinedev/core"
-
 
 const { mutate } = useDelete();
 
@@ -125,4 +121,4 @@ DELETE {apiUrl}/{resource}/{id}
 
 ## 更多方法
 
-以上为 Refine 的常用方法展示，更多方法请[查看文档](https://refine.dev/docs/api-reference/core/hooks/data/useApiUrl)。
+以上是 Refine 常用的方法示例，还有更多方法可以[查阅文档](https://refine.dev/docs/api-reference/core/hooks/data/useApiUrl)。

@@ -4,7 +4,7 @@
 
 ## 安装
 
-脚手架安装已自带该插件依赖，无需重复安装，手动安装执行以下命令：
+如果你使用了脚手架安装，那么已经自带了该插件的依赖，无需重复安装。如果需要手动安装，请执行以下命令：
 
 ```sh
 yarn add @duxweb/dux-plugin
@@ -12,7 +12,7 @@ yarn add @duxweb/dux-plugin
 
 ## 使用
 
-修改 Uno 配置文件设置 dark 的获取方式与加入 presetDux 预设配置。
+在 UnoCSS 配置文件中，设置 dark 主题的获取方式，并加入 `presetDux` 预设配置：
 
 ```js
 import { presetDux } from '@duxweb/dux-plugin'
@@ -21,7 +21,7 @@ export default defineConfig({
   presets: [
     presetUno({
       dark: {
-        dark: '[theme-mode="dark"]',
+        dark: '[theme-mode="dark"]', // 设置 dark 主题的获取方式
       },
     }),
     presetDux(),
@@ -32,7 +32,7 @@ export default defineConfig({
 
 ## 样式监听
 
-因 Dux Refine 为扩展包，包中使用的样式 UnoCSS 默认无法进行读取，所以需要修改 pipeline 配置加入该扩展包的监听：
+由于 Dux Refine 是一个扩展包，包中使用的样式默认情况下 UnoCSS 无法自动识别。因此，你需要修改 UnoCSS 的配置，将 Dux Refine 的样式文件纳入监听范围：
 
 ```js
 
@@ -41,12 +41,12 @@ export default defineConfig({
   content: {
     pipeline: {
       include: [
-        // the default
+        // 默认
         /\.(vue|svelte|[jt]sx|mdx?|astro|elm|php|phtml|html)($|\?)/,
-        // include js/ts files
+        // 包含 js/ts 文件
         'src/**/*.{js,ts,jsx,tsx}',
         // dux refine
-        /dux-refine\.(js)(x?)$/,
+        /dux-refine\.(js)(x?)$/, // 将 Dux Refine 的样式文件添加到监听中
       ]
     },
   },

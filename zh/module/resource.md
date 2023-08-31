@@ -1,11 +1,10 @@
 # 资源
 
-在这里资源代表数据与路由的集合，通过资源可以将路由、数据与菜单做一系列关联。
-
+在这里，资源表示数据和路由的结合体，通过资源可以将路由、数据和菜单进行关联。
 
 ## 配置方法
 
-资源配置一般放置在 `register` 生命周期中，获取到管理端方法后再使用 `addRouter` 进行添加资源操作。
+一般来说，资源的配置应放在 `register` 生命周期中。在获取到管理端方法之后，你可以使用 `addResources` 来添加资源配置。
 
 ```js
 import { appContext, createApp } from '@duxweb/dux-refine'
@@ -13,7 +12,7 @@ import { appContext, createApp } from '@duxweb/dux-refine'
 const register = (context: appContext) => {
   const app = context.getApp('admin')
 
- // add admin resources
+  // 添加 admin 资源
   app.addResources([
     {
       name: 'article',
@@ -21,29 +20,30 @@ const register = (context: appContext) => {
       create: 'article/create',
       edit: 'article/create/{id}',
       meta: {
-        label: 'article',
+        label: '文章管理',
       },
     },
   ])
 }
 ```
 
-基本配置参数如下：
+基本的配置参数如下：
 
-- `name` 资源标识，单个管理端唯一标识，Api 请求会自动拼接该标识为 Url 的一部分。
-- `list` 列表页面路由，前端路由对应路径
-- `create` 创建页面路由，前端路由对应路径
-- `edit` 编辑页路由，前端路由对应路径
-- `show` 展示页路由，前端路由对应路径
-- `meta` 资源参数，默认需配置 `label` 为资源标签名，使用多语言时该名称一般用于多语言的调用变量。
+- `name`：资源的标识符，每个单一管理端需要有唯一的标识符。API 请求会自动将此标识符拼接到 URL 的一部分。
+- `list`：列表页面的路由，对应前端的路由路径。
+- `create`：创建页面的路由，对应前端的路由路径。
+- `edit`：编辑页面的路由，对应前端的路由路径，可以通过 `{id}` 进行参数替换。
+- `show`：展示页面的路由，对应前端的路由路径，可以通过 `{id}` 进行参数替换。
+- `meta`：资源的元数据参数，默认需要配置 `label` 作为资源的标签名。在使用多语言时，该名称通常用作多语言翻译的变量。
 
-## 资源使用
+## 使用资源
 
-在对应路由的页面中使用 `useResource` 方法可获取资源的使用方法，获取到当前的路由信息，同时使用`数据请求`方法时默认资源为当前路由对应的资源。
+在对应路由的页面中，你可以使用 `useResource` 方法来获取资源的使用方法。它会获取当前的路由信息，并在使用数据请求方法时默认将资源设置为当前路由对应的资源。
 
 ```jsx
 import { useResource } from "@refinedev/core";
-const { resource, action, id} = useResource()
+
+const { resource, action, id } = useResource();
 ```
 
-具体参数方法请参考 [useResource](https://refine.dev/docs/api-reference/core/hooks/resource/useResource/#basic-usage)
+有关具体的参数和方法，请参考 [useResource](https://refine.dev/docs/api-reference/core/hooks/resource/useResource/#basic-usage) 部分。

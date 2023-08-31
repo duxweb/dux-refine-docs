@@ -4,10 +4,10 @@ layout: home
 hero:
   name: Dux Refine
   text: Refine & TDesign Framework
-  tagline: Frontend Framework for Middle and Back-End using Refine and TDesign
+  tagline: Mid and Back Office Frontend Framework Based on Refine and TDesign
   actions:
     - theme: brand
-      text: Quick Start
+      text: Get Started Quickly
       link: /en/guide/started
     - theme: alt
       text: GitHub
@@ -15,30 +15,30 @@ hero:
 
 features:
   - title: "Refine"
-    details: Build on the solid foundation of Refine, ensuring stability and ease.
+    details: Utilizes Refine as the foundation for a headless frontend framework, ensuring stability and ease of use.
     icon: 🚀
   - title: 'TDesign'
-    details: Use TDesign React for a range of user-friendly components.
+    details: Utilizes TDesign React as the base UI library, featuring a plethora of user-friendly components.
     icon: 🧅 
-  - title: 'Easy to Use'
-    details: Combine Refine and TDesign for straightforward use without complex setups.
+  - title: 'Out-of-the-Box'
+    details: Integrates Refine framework and TDesign component library, ready to use without complex configurations.
     icon: 📦
   - title: 'UnoCSS'
-    details: Develop with Unocss, integrating TDesign Tokens for consistent styles.
+    details: Develops with Unocss presets, incorporating TDesign Tokens for consistent styling.
     icon: 🎨
   - title: 'Axios'
-    details: Utilize Axios with Refine for automatic caching and updates.
+    details: Employs Axios as the foundational request library, synergizing with Refine for automated caching and updates.
     icon: 🔑
-  - title: 'Multi-Language'
-    details: Integrate React i18n for various language support.
+  - title: 'I18n'
+    details: Integrates React i18n library for multilingual support, extensible to various languages.
     icon: 🌍
   - title: 'TypeScript'
-    details: Written in TypeScript for type safety and better prompts.
+    details: Written in TypeScript, offering type safety and comprehensive parameter prompts.
     icon: 🎡
-  - title: 'Accessibility'
-    details: Each component supports ARIA for easy keyboard use, especially for special needs users.
+  - title: 'Accessibility Support'
+    details: Every component supports ARIA keyboard accessibility, catering to users with special needs.
     icon: ⌨️
-  - title: 'Mobile Ready'
-    details: adapts to different devices, allowing access anywhere.
+  - title: 'Mobile Adaptation'
+    details: Adapts to various devices such as smartphones and tablets, allowing access anytime, anywhere.
     icon: 📱
 ---

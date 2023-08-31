@@ -1,10 +1,10 @@
 # 路由
 
-可在模块入口配置中每个管理端的路由。
+你可以在模块的入口配置中为每个管理端配置路由。
 
 ## 配置方法
 
-路由配置一般放置在 `register` 生命周期中，获取到管理端方法后再使用 `addRouter` 进行添加路由操作。
+一般情况下，路由的配置应该放在 `register` 生命周期中。在获取到管理端方法之后，你可以使用 `addRouter` 方法来添加路由配置。
 
 ```js
 import { appContext, createApp } from '@duxweb/dux-refine'
@@ -12,7 +12,7 @@ import { appContext, createApp } from '@duxweb/dux-refine'
 const register = (context: appContext) => {
   const app = context.getApp('admin')
 
- // add admin route
+  // 添加 admin 管理端的路由
   app.addRouter([
     {
       path: 'article',
@@ -22,4 +22,4 @@ const register = (context: appContext) => {
 }
 ```
 
-路由的配置具体可以参考 [react router v6](https://reactrouter.com/en/main/route/route) 的配置参数。
+具体的路由配置参数可以参考 [React Router v6](https://reactrouter.com/en/main/route/route) 的文档。

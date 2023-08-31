@@ -91,12 +91,13 @@ function getSidebar(lang: 'zh' | 'en') {
     {
       text: getText('组件', 'Components'),
       items: [
+        { text: getText('页面布局', 'Layout'), link: getLink('/components/layout') },
         { text: getText('模态框', 'Modal'), link: getLink('/components/modal') },
         { text: getText('表格', 'Table'), link: getLink('/components/table') },
-        { text: getText('页面表格', 'Page Table'), link: getLink('/components/pageTable') },
+        { text: getText('表格页面', 'Table Page'), link: getLink('/components/pageTable') },
         { text: getText('表单', 'Form'), link: getLink('/components/form') },
-        { text: getText('模态表单', 'Modal Form'), link: getLink('/components/modalForm') },
-        { text: getText('页面表单', 'Page Form'), link: getLink('/components/pageForm') },
+        { text: getText('模态表单', 'Form Modal'), link: getLink('/components/modalForm') },
+        { text: getText('表单页面', 'Form Page'), link: getLink('/components/pageForm') },
       ]
     },
     {

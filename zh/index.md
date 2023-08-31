@@ -4,7 +4,7 @@ layout: home
 hero:
   name: Dux Refine
   text: Refine & TDesign Framework
-  tagline: 基于 Refine 与 TDesign 的中后台前端框架
+  tagline: 基于 Refine 和 TDesign 的中后台前端框架
   actions:
     - theme: brand
       text: 快速开始
@@ -21,19 +21,19 @@ features:
     details: 使用 TDesign React 作为基础的 UI 库，拥有百种易用组件。
     icon: 🧅 
   - title: '开箱即用'
-    details: 整合 Refine 框架 与 TDesign 组件库，开箱即用，无需复杂配置。
+    details: 整合 Refine 框架和 TDesign 组件库，开箱即用，无需复杂配置。
     icon: 📦
   - title: 'UnoCSS'
-    details: 使用 Unocss 预设的开发，整合 TDesign Token，保持风格一致性。
+    details: 使用 Unocss 预设进行开发，整合 TDesign Token，保持风格一致性。
     icon: 🎨
   - title: 'Axios'
-    details: 使用 Axios 作为基础请求库，配合 Refine 做自动化缓存与更新。
+    details: 使用 Axios 作为基础请求库，配合 Refine 做自动化缓存和更新。
     icon: 🔑
   - title: 'I18n'
     details: 整合 React i18n 库作为多语言库，可任意扩展多种语言支持。
     icon: 🌍
   - title: 'TypeScript'
-    details: 使用 TypeScript 编写，具有类型安全和完整的参数提示。
+    details: 使用 TypeScript 编写，具有类型安全性和完整的参数提示。
     icon: 🎡
   - title: '无障碍支持'
     details: 每个组件均支持 ARIA 键盘无障碍操作，特殊人群轻松使用。
