@@ -1,6 +1,6 @@
 # 表格组件
 
-表格组件使用 [TDesign Table](https://tdesign.tencent.com/react/components/table) 进行二次封装，支持组件参数的同时使用 hook 多组件进行扩展使其可以支持 Refine 数据请求，使用方法如下：
+表格组件使用 [TDesign Table](https://tdesign.tencent.com/react/components/table) 进行二次封装，支持组件参数的同时使用 hook 对组件进行扩展使其可以支持 Refine 数据请求，使用方法如下：
 
 ```js
 import { CardTable } from '@duxweb/dux-refine'
