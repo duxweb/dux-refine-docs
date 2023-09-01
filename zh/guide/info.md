@@ -2,6 +2,10 @@
 
 **Dux Refine** 是一个适用于各类规模的中后台管理前端解决方案。它基于 [Refine](https://refine.dev/) 框架构建管理功能，同时利用 [TDesign](https://tdesign.tencent.com/react) UI 组件来构建用户界面。此外，该解决方案还集成了各种必要的预设组件，实现了开箱即用的特性，无需繁琐的设置。
 
+![login](/public/login.jpg)
+
+![page](/public/page.jpg)
+
 ## 特点
 
 - **Refine 整合**

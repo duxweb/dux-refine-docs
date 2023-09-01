@@ -2,6 +2,9 @@
 
 **Dux Refine** is a frontend solution designed for a wide range of scales in back-office management applications. It is built upon the [Refine](https://refine.dev/) framework to manage functionalities and leverages [TDesign](https://tdesign.tencent.com/react) UI components to construct the user interface. Additionally, this solution integrates various necessary preset components, offering an out-of-the-box feature set without the need for intricate configurations.
 
+![login](/public/login.jpg)
+
+![page](/public/page.jpg)
 ## Features
 
 - **Refine Integration**
