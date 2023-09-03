@@ -125,6 +125,6 @@ import { Config } from '@duxweb/dux-refine'
 ## sideType
 
 - 类型: `app|collapse`
-- Default: `app`
+- 默认值: `app`
 
 侧边栏菜单类型，分栏应用式和三级折叠式。
