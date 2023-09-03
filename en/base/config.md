@@ -121,3 +121,10 @@ Password recovery switch status.
 - Default: `undefined`
 
 Password update switch status.
+
+
+## sideType
+
+- 类型: `app|collapse`
+
+Sidebar menu types, split-column applied and three-level collapsed.
