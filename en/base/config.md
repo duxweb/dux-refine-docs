@@ -125,6 +125,7 @@ Password update switch status.
 
 ## sideType
 
-- 类型: `app|collapse`
+- Type: `app|collapse`
+- Default: `app`
 
 Sidebar menu types, split-column applied and three-level collapsed.
