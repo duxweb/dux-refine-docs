@@ -1,10 +1,10 @@
 # 菜单
 
-要将资源配置为侧边栏菜单，需要在资源中定义 `meta` 参数。同时，系统支持多级的上下级关系，最多支持三级关系。
+To configure resources as sidebar menus, you need to define the `meta` parameter in the resources. The system supports multi-level parent-child relationships, with a maximum of three levels.
 
-## 菜单配置
+## Menu Configuration
 
-菜单的配置需要在添加资源时进行。下面是一个定义了二级菜单的示例：
+Menu configuration should be done when adding resources. Here's an example that defines a second-level menu:
 
 ```js
 import { appContext, createApp } from '@duxweb/dux-refine'
@@ -12,52 +12,55 @@ import { appContext, createApp } from '@duxweb/dux-refine'
 const register = (context: appContext) => {
   const app = context.getApp('admin')
 
-  // 添加 admin 资源
+  // Add admin resources
   app.addResources([
     {
       name: 'content',
       meta: {
-        label: '内容管理', 
+        label: 'Content Management',
         icon: 'i-tabler:book',
+        sort: 0
       },
     },
     {
       name: 'article',
       list: 'article',
       meta: {
-        label: '文章管理',
+        label: 'Article Management',
         parent: 'content',
+        sort: 0
       },
     },
   ])
 }
-``}
+```
 
-## 菜单参数
+## Menu Parameters
 
-只有在资源定义了 `list` 路由后，菜单项才会被视为可点击的菜单，否则会被视为上级菜单。在 `meta` 参数中，可以配置以下属性：
+A menu item will only be considered a clickable menu if the resource defines a `list` route. Otherwise, it will be considered a parent menu. In the `meta` parameter, you can configure the following properties:
 
-- `label`：资源的标签名，会在菜单和面包屑导航中显示。
-- `parent`：上级资源标识，用于定义上下级关系，对应上级资源的 `name` 参数。
-- `icon`：菜单图标，只会在一级和二级菜单中显示，支持 UnoCSS 图标库。
+- `label`: The label for the resource, which will be displayed in the menu and breadcrumb navigation.
+- `parent`: The parent resource identifier, used to define parent-child relationships. It corresponds to the `name` parameter of the parent resource.
+- `icon`: Menu icon, supports UnoCSS icon library.
+- `sort`: Menu order, sorting in ascending order from small to large.
 
-## 菜单翻译
+## Menu Translation
 
-系统会根据资源的 `label` 自动关联对应的多语言翻译。默认情况下，会使用以下的翻译变量作为显示：
+The system will automatically associate the corresponding translation with the `label` of the resource. By default, the following translation variable is used for display:
 
 ```
 {label}.name
 ```
 
-因此，在语言包中需要进行如下配置：
+Therefore, you need to configure it in the language pack as follows:
 
 ```json
 // en
 {
   "article": {
-    "name": "文章列表"
+    "name": "Article List"
   }
 }
 ```
 
-这样，菜单就会显示为 "文章列表"。
+This way, the menu will be displayed as "Article List".

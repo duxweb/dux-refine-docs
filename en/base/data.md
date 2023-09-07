@@ -1,18 +1,19 @@
 # Data Structure
 
-Dux Refine defines API data standards by default. According to the documentation, you need to return corresponding interface formats and fields.
+Dux Refine defines default API data specifications, and you need to return the corresponding interface format and fields according to the documentation.
 
 :::tip
-There are plans to introduce custom interface structure conversion configurations in the future.
+Future plans include adding custom API structure transformation configurations.
 :::
 
 ## Basic Data
 
-The data returned by APIs should follow the `json` data format. The interface URLs should adhere to the basic `RESTful API` format. Regardless of whether the status code is 200 or not, the returned `json` data format should contain the following fields:
+API data returned should be in JSON format, and the interface URL should follow the basic RESTful API format. Regardless of whether it is a 200 status code or not, the returned JSON data format should include the following fields:
 
-- `code` Status code, consistent with HTTP status code
-- `message` Message, custom message content for the response
-- `data` Data, custom message data for the response
+- `code`: Status code, consistent with HTTP status code.
+- `message`: Message, custom message content returned.
+- `data`: Data, the message data returned.
+- `meta`: Additional data, optionally custom additional data.
 
 ```json
 {
@@ -20,17 +21,20 @@ The data returned by APIs should follow the `json` data format. The interface UR
   "message": "ok",
   "data": {
     ...
+  },
+  "meta": {
+    ...
   }
 }
 ```
 
-When making requests from the frontend, the following common request headers will be sent:
+When making requests from the frontend, the following common request headers will be included:
 
-- `Accept-Language` Request language. APIs can use this parameter to return data or information in the corresponding language.
-- `Authorization` User authentication. After logging in, this parameter will be included in every request. APIs need to verify its validity.
+- `Accept-Language`: Request language. The API can use this parameter to return data or information in the corresponding language.
+- `Authorization`: User authentication. After logging in, this parameter will be included with every request, and the API needs to validate its validity.
 
 ```http
-Accept-Language: en
+Accept-Language: zh
 Authorization: Bearer <token>
 ```
 
@@ -60,7 +64,7 @@ API returns an error message.
 
 ## Login Request
 
-When logging in, the following `json` parameters are sent as the request body content.
+During login, the following JSON parameters are sent as the request body content.
 
 ```json
 {
@@ -69,7 +73,7 @@ When logging in, the following `json` parameters are sent as the request body co
 }
 ```
 
-After successful login, the following fields need to be returned at least. Additionally, other additional fields can be stored for custom use.
+After a successful login, at least the following fields need to be returned. Additionally, other additional fields can be stored for custom use.
 
 ```json
 {
@@ -87,9 +91,9 @@ After successful login, the following fields need to be returned at least. Addit
 }
 ```
 
-## Login Expiry
+## Login Expiration
 
-When the login expires or token validation fails, a status code of `401` needs to be returned.
+When a login expires or token validation fails, a status code of `401` should be returned.
 
 ```json
 {
@@ -101,7 +105,7 @@ When the login expires or token validation fails, a status code of `401` needs t
 
 ## User Permissions
 
-During login, the backend needs to return the `permission` field as user permissions. If this field is empty, there are no restrictions on permissions. This permission is only used for frontend validation, and APIs need to independently determine interface permissions. The permission structure is as follows:
+During login, the backend needs to return a `permission` field as user permissions. If this field is empty, there are no permission restrictions. This permission is only used for frontend validation, and the API needs to determine interface permissions itself. The permission structure is as follows:
 
 ```json
 {
@@ -115,67 +119,68 @@ During login, the backend needs to return the `permission` field as user permiss
 }
 ```
 
-The `key` of the permission uses the naming convention of `resource.action`, and the `value` indicates whether the permission is granted.
+Permission `keys` are named in the format `resource.action`, and the `value` indicates whether the permission is held.
 
 ## List Data
 
-List data is fetched using a `GET` request. The basic URL format is as follows:
+List data is requested using a `GET` request, and the basic URL is as follows:
 
 ```http
 GET http://example.test/article
 ```
 
-The returned data can be either paginated or non-paginated. The API should return the following basic format:
+Data return is divided into paginated and non-paginated data. The API should return the following basic format:
 
-- `list` Array of data
-- `total` Total count of data (this field is irrelevant for non-paginated data)
+- `list`: Array data
+- `total`: Total data count. For non-paginated data, this field is invalid.
 
 ```json
 {
   "code": 200,
   "message": "ok",
-  "data": {
-    "list": [
-      ...
-    ],
+  "data": [
+    ...
+  ],
+  "meta": {
     "total": 100
   }
 }
 ```
 
-For paginated requests, the `page` parameter is used to specify the page number, as follows:
+For paginated requests, you should use the `page` parameter to specify the page number, as follows:
 
 ```
 http://example.test/article?page=1
 ```
 
-## Single Data Entry
+## Single Data
 
-Single data entries are fetched using a `GET` request. The basic URL format is as follows:
+Single data is requested using a `GET` request, and the basic URL is as follows:
 
 ```http
 GET http://example.test/article/{id}
 ```
 
-The API should return the following data:
+The API needs to return the following data:
 
-- `info` Detailed data
+- `info`: Detail data
 
 ```json
 {
   "code": 200,
   "message": "ok",
   "data": {
-    "info": {
-      ...
-    }
+    ...
+  },
+  "meta": {
+    ...
   }
 }
 ```
 
-## Create Data Entry
+## Create Data
 
-Data entries are created using a `POST` request. The basic request URL and data format are as follows. Upon success, a success message should be returned.
+Create data is requested using a `POST` request, and the basic request URL and data are as follows. Upon success, return a success message.
 
 ```http
 POST http://example.test/article
@@ -187,9 +192,9 @@ BODY
 }
 ```
 
-## Edit Data Entry
+## Edit Data
 
-Data entries are edited using a `POST` request. The basic request URL and data format are as follows. Upon success, a success message should be returned.
+Edit data is requested using a `POST` request, and the basic request URL and data are as follows. Upon success, return a success message.
 
 ```http
 POST http://example.test/article/{id}
@@ -201,9 +206,9 @@ BODY
 }
 ```
 
-## Delete Data Entry
+## Delete Data
 
-Data entries are deleted using a `DELETE` request. The basic request URL is as follows. Upon success, a success message should be returned.
+Delete data is requested using a `DELETE` request, and the basic request URL is as follows. Upon success, return a success message.
 
 ```http
 DELETE http://example.test/article/{id}

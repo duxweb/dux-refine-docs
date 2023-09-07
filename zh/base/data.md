@@ -12,13 +12,17 @@ API 返回的数据需要采用 `json` 数据格式，接口 URL 应遵循基本
 
 - `code` 状态码，与 HTTP 状态码一致
 - `message` 消息，自定义返回的消息内容
-- `data` 数据，自定义返回的消息数据
+- `data` 数据，返回的消息数据
+- `meta` 附加数据，可选自定义附加数据
 
 ```json
 {
   "code": 200,
   "message": "ok",
   "data": {
+    ...
+  },
+  "meta": {
     ...
   }
 }
@@ -134,10 +138,10 @@ GET http://example.test/article
 {
   "code": 200,
   "message": "ok",
-  "data": {
-    "list": [
-      ...
-    ],
+  "data": [
+    ...
+  ],
+  "meta": {
     "total": 100
   }
 }
@@ -166,9 +170,10 @@ API 需要返回以下数据：
   "code": 200,
   "message": "ok",
   "data": {
-    "info": {
-      ...
-    }
+    ...
+  },
+  "meta": {
+    ...
   }
 }
 ```
