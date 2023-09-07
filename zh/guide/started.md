@@ -26,6 +26,11 @@
 npx @duxweb/dux-cli
 ```
 
+如果选择手动安装，需要依赖：
+```
+yarn add tdesign-react @duxweb/dux-plugin @duxweb/dux-refine @refinedev/cli @refinedev/core @refinedev/react-router-v6 @iconify-json/tabler 
+```
+
 ### 安装依赖
 
 初始化完成后，运行以下命令来安装项目所需依赖：

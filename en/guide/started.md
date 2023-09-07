@@ -26,6 +26,11 @@ Run the following command in the project root directory to initialize:
 npx @duxweb/dux-cli
 ```
 
+If you choose to install manually, dependencies are required:
+```
+yarn add tdesign-react @duxweb/dux-plugin @duxweb/dux-refine @refinedev/cli @refinedev/core @refinedev/react-router-v6 @iconify-json/tabler 
+```
+
 ### Install Dependencies
 
 After initialization, run the following command to install the required project dependencies:
