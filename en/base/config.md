@@ -121,3 +121,11 @@ Password recovery switch status.
 - Default: `undefined`
 
 Password update switch status.
+
+
+## sideType
+
+- Type: `app|collapse`
+- Default: `app`
+
+Sidebar menu types, split-column applied and three-level collapsed.

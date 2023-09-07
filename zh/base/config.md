@@ -121,3 +121,10 @@ import { Config } from '@duxweb/dux-refine'
 - 默认值: `undefined`
 
 密码修改开关状态。
+
+## sideType
+
+- 类型: `app|collapse`
+- 默认值: `app`
+
+侧边栏菜单类型，分栏应用式和三级折叠式。
