@@ -17,12 +17,6 @@ import { CardTable } from '@duxweb/dux-refine'
 
 自定义表格卡片的标题。
 
-## header
-
-- 类型：`React.ReactNode`
-- 默认值：`undefined`
-
-自定义表格卡片的头部元素。
 
 ## tabs
 
@@ -48,16 +42,16 @@ import { CardTable } from '@duxweb/dux-refine'
 ]
 ```
 
-## banner
+## headerRender
 
-- 类型：`React.ReactNode`
+- 类型：`() => React.ReactNode`
 - 默认值：`undefined`
 
-在表格卡片顶部添加自定义元素。
+自定义表格卡片的头部元素。
 
-## footer
+## footerRender
 
-- 类型：`React.ReactNode`
+- 类型：`() => React.ReactNode`
 - 默认值：`undefined`
 
 在表格卡片底部添加自定义元素。
@@ -75,13 +69,6 @@ TDesign 表格组件的[配置参数](https://tdesign.tencent.com/react/componen
 - 默认值：`undefined`
 
 TDesign 表格组件的列配置参数，你可以根据需要配置选择、筛选等功能。
-
-## filterData
-
-- 类型：`Record<string, any>`
-- 默认值：`undefined`
-
-表格筛选扩展数据，通过这个参数，你可以将外部的参数传递到筛选表单中。
 
 ## filterRender
 
@@ -113,7 +100,7 @@ filterRender={() => {
 
 ## batchRender
 
-- 类型：`React.ReactNode`
+- 类型：`() => React.ReactNode`
 - 默认值：`undefined`
 
 自定义多选表格行后的多选操作元素，通过表格的 Ref 可以获取到所选择的数据。
@@ -127,10 +114,10 @@ return (
   <CardTable
     ref={table}
     batchRender={
-      <>
+      () => <>
         <Button onClick={() => {
           console.log(table.current.selecteds)
-        }}>删除</Button>
+        }}>Delete</Button>
       </>
     }
   />

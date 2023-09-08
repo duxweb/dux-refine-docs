@@ -61,25 +61,3 @@ const register = (context: appContext) => {
   ])
 }
 ```
-
-### 底部工具栏
-
-使用 `setTabbar` 方法来配置移动端的底部工具栏，方法参数与用户菜单一致：
-
-- `label` 标签名，按钮显示名称。
-- `icon` 图标，仅支持 Unocss 的 CSS 图标。
-- `route` 跳转路由，跳转到当前管理端的子路由。
-
-```js
-const register = (context: appContext) => {
-  const admin = context.getApp('admin')
-
-  admin.setTabbar([
-    {
-      label: '仪表盘',
-      icon: 'i-tabler:home',
-      route: 'index',  // 跳转到 /admin/index
-    }
-  ])
-}
-```

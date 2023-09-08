@@ -1,8 +1,8 @@
 # Project Configuration
 
-After installing through the scaffold, you can find the project's configuration in the `src/config/index.ts` file. You can configure global project parameters here.
+After installing through the scaffolding, you can find the project's configuration in the `src/config/index.ts` file. Here, you can configure global project parameters.
 
-TypeScript type inference can be imported as follows:
+You can import TypeScript type inference as follows:
 
 ```typescript
 import { Config } from '@duxweb/dux-refine'
@@ -12,84 +12,84 @@ import { Config } from '@duxweb/dux-refine'
 
 - Type: `string`
 
-Project ID, used as a unique identifier to distinguish between multiple projects. Currently, it doesn't have a specific purpose.
+Project ID used as a unique identifier to distinguish between multiple projects. Currently, it doesn't have a specific function.
 
 ## apiUrl
 
 - Type: `string`
 
-Backend base API URL, for example: https://example.test/api
+The base backend API address, for example: https://example.test/api
 
 ## apiPath
 
 - Type: `object`
 
-Configuration for backend API paths. These paths will be merged with `apiUrl` to construct the final request URLs.
+Configuration for the base paths of backend APIs. It will be merged with `apiUrl` to build the final request address.
 
 ### apiPath.login
 
 - Type: `string`
 
-POST path for login requests, for example: `login`, resulting in a request URL like `https://example.test/api/login`
+The POST path for login requests, for example, if it's `login`, the final request address will be `https://example.test/api/login`.
 
 ### apiPath.check
 
 - Type: `string`
 
-GET path for login authentication checks.
+The GET path for login authentication checks.
 
 ### apiPath.register
 
 - Type: `string`
 - Default: `undefined`
 
-POST path for user registration.
+The POST path for user registration.
 
 ### apiPath.forgotPassword
 
 - Type: `string`
 - Default: `undefined`
 
-POST path for user password recovery.
+The POST path for user password retrieval.
 
 ### apiPath.updatePassword
 
 - Type: `string`
 - Default: `undefined`
 
-POST path for user password updates.
+The POST path for user password modification.
 
 ### apiPath.updateProfile
 
 - Type: `string`
 - Default: `undefined`
 
-POST path for updating user profiles, reserved for future use.
+The POST path for modifying personal profile information. This path is reserved.
 
 ### apiPath.upload
 
 - Type: `string`
 - Default: `undefined`
 
-POST path for asynchronous file uploads.
+The POST path for asynchronous file uploads.
 
 ## defaultApp
 
 - Type: `string`
 
-Default admin panel identifier. The scaffold default configuration is `admin`.
+The default identifier for the admin panel. The scaffolding default configuration is `admin`.
 
 ## resourcesPrefix
 
 - Type: `boolean`
 
-Resource path prefix. When enabled, the admin panel identifier will be automatically added after the `apiUrl` path, like: `https://example.test/api/admin/login`
+Resource path prefix. When enabled, it will automatically add the admin panel identifier after the `apiUrl` path, for example: `https://example.test/api/admin/login`.
 
 ## moduleApp
 
 - Type: `object`
 
-Configurations for different admin panels.
+Configure basic settings for different admin panels.
 
 ```typescript
 {
@@ -106,26 +106,25 @@ Configurations for different admin panels.
 - Type: `boolean`
 - Default: `undefined`
 
-Registration switch status.
+Registration toggle state.
 
 ### moduleApp.forgotPassword
 
 - Type: `boolean`
 - Default: `undefined`
 
-Password recovery switch status.
+Password retrieval toggle state.
 
 ### moduleApp.updatePassword
 
 - Type: `boolean`
 - Default: `undefined`
 
-Password update switch status.
-
+Password modification toggle state.
 
 ## sideType
 
 - Type: `app|collapse`
-- Default: `app`
+- Default: `collapse`
 
-Sidebar menu types, split-column applied and three-level collapsed.
+Sidebar menu type, with options for application style and three-level collapse style. The application style is currently under optimization and cannot be specified at the moment.
